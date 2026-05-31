@@ -1,6 +1,10 @@
 const express = require('express');
 const db = require('../db');
+const { requireAdmin, authMiddleware } = require('../middleware/auth');
 const router = express.Router();
+
+// attach auth middleware so req.user is available
+router.use(authMiddleware);
 
 const productSelect = `
   SELECT
@@ -25,8 +29,9 @@ router.get('/', async (req, res) => {
     const result = await db.query(`${productSelect} GROUP BY p.id ORDER BY p.created_at DESC`);
     res.json(result.rows);
   } catch (error) {
-    console.error('GET /products error', error);
-    res.status(500).json({ error: 'Unable to fetch products' });
+    console.error('GET /products error:', error.message);
+    console.error('Full error:', error);
+    res.status(500).json({ error: error.message || 'Unable to fetch products' });
   }
 });
 
@@ -43,7 +48,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', requireAdmin, async (req, res) => {
   const {
     category_id,
     brand_id,
@@ -119,7 +124,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', requireAdmin, async (req, res) => {
   const {
     category_id,
     brand_id,
@@ -205,7 +210,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', requireAdmin, async (req, res) => {
   const client = await db.pool.connect();
   try {
     await client.query('BEGIN');
