@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../api';
 
 export default function Login({ onLogin }) {
@@ -21,18 +21,34 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div className="wrap" style={{ padding: 24 }}>
-      <h2>Kirish</h2>
-      <form onSubmit={submit} style={{ maxWidth: 420, marginTop: 12 }}>
-        <div style={{ marginBottom: 8 }}>
-          <input placeholder="Telefon" value={phone} onChange={(e) => setPhone(e.target.value)} />
+    <div className="auth-page">
+      <div className="auth-card">
+        <div className="auth-side auth-side--info">
+          <h2>OpenShopga xush kelibsiz</h2>
+          <p>Telefon raqamingiz va parolingiz yordamida kirishingiz mumkin. Agar ro'yxatdan o'tmagan bo'lsangiz, quyidagi tugma orqali ro'yxatdan o'ting.</p>
+          <div className="auth-credentials">
+            <strong>Admin test:</strong>
+            <p>Telefon: <span>998901234567</span></p>
+            <p>Parol: <span>admin123</span></p>
+          </div>
+          <Link className="auth-link" to="/register">Yangi hisob ochish</Link>
         </div>
-        <div style={{ marginBottom: 8 }}>
-          <input type="password" placeholder="Parol" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <div className="auth-side auth-side--form">
+          <h2>Kirish</h2>
+          <form onSubmit={submit} className="auth-form">
+            <label>
+              Telefon
+              <input type="text" placeholder="998901234567" value={phone} onChange={(e) => setPhone(e.target.value)} />
+            </label>
+            <label>
+              Parol
+              <input type="password" placeholder="Parol" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </label>
+            {error && <div className="auth-error">{error}</div>}
+            <button className="order-btn" type="submit">Kirish</button>
+          </form>
         </div>
-        {error && <div style={{ color: 'red', marginBottom: 8 }}>{error}</div>}
-        <button className="order-btn" type="submit">Kirish</button>
-      </form>
+      </div>
     </div>
   );
 }

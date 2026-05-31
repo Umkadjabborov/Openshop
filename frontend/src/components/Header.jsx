@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Header({ cartCount }) {
+export default function Header({ cartCount, user, onLogout }) {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
@@ -15,8 +15,6 @@ export default function Header({ cartCount }) {
     navigate('/');
     setSearch('');
   };
-
-  const token = localStorage.getItem('token');
 
   return (
     <header className="header">
@@ -48,13 +46,19 @@ export default function Header({ cartCount }) {
               <span>Savat</span>
               {cartCount > 0 && <div className="hbadge">{cartCount}</div>}
             </div>
-            {!token ? (
+            {user?.role === 'admin' && (
+              <div className="hbtn" onClick={() => navigate('/admin/add')}>
+                <span>⭐</span>
+                <span>Admin</span>
+              </div>
+            )}
+            {!user ? (
               <div className="hbtn" onClick={() => navigate('/login')}>
                 <span>🔒</span>
                 <span>Kirish</span>
               </div>
             ) : (
-              <div className="hbtn" onClick={() => { localStorage.removeItem('token'); navigate('/'); window.location.reload(); }}>
+              <div className="hbtn" onClick={() => { onLogout(); navigate('/'); }}>
                 <span>🚪</span>
                 <span>Chiqish</span>
               </div>

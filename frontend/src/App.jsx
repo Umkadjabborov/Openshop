@@ -14,7 +14,6 @@ function App() {
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [toast, setToast] = useState('');
 
   // Load cart and wishlist from localStorage
@@ -56,7 +55,6 @@ function App() {
 
   const handleLogin = (userObj, t) => {
     setUser(userObj);
-    setToken(t);
     localStorage.setItem('token', t);
   };
 
@@ -95,7 +93,7 @@ function App() {
   return (
     <Router>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Header cartCount={cart.length} />
+        <Header cartCount={cart.length} user={user} onLogout={handleLogout} />
         <main style={{ flex: 1 }}>
           <Routes>
             <Route
