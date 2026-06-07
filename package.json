@@ -1,37 +1,30 @@
 {
-  "name": "openshop",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "openshop-react",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "frontend": "cd frontend && npm run dev",
-    "fullstack": "concurrently \"npm run dev\" \"npm run frontend\"",
-    "create-admin": "node src/scripts/create-admin.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "dev:all": "set \"PORT=4001\" && set \"VITE_API_BASE=http://localhost:4001\" && concurrently \"npm run server\" \"npm run dev\"",
+    "dev-all": "npm run dev:all",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node --env-file=.env server/index.js",
+    "start": "concurrently \"npm run server\" \"npm run dev\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Umkadjabborov/Openshop.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Umkadjabborov/Openshop/issues"
-  },
-  "homepage": "https://github.com/Umkadjabborov/Openshop#readme",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3",
-    "pg": "^8.21.0"
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "emoji-picker-react": "^4.19.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.14.2"
   },
   "devDependencies": {
-    "concurrently": "^10.0.0",
-    "nodemon": "^3.1.14"
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "vite": "^5.4.1"
   }
 }

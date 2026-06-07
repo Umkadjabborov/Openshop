@@ -1,0 +1,58 @@
+[
+  {
+    "id": "42d32bd3-91c2-45d8-94ec-c936e3b8d9af",
+    "name": "Openshop",
+    "endpoint_id": "ep-curly-morning-aq7b07jm",
+    "created_at": "2026-05-29 14:44:11.040000+00:00",
+    "updated_at": "2026-05-29 14:44:11.040000+00:00",
+    "trusted_origins": [],
+    "social_providers": [
+      {
+        "id": "google",
+        "isShared": true
+      }
+    ],
+    "email_provider": {
+      "type": "shared"
+    },
+    "email_and_password": {
+      "enabled": true,
+      "disableSignUp": false,
+      "emailVerificationMethod": "otp",
+      "requireEmailVerification": false,
+      "autoSignInAfterVerification": true,
+      "sendVerificationEmailOnSignIn": false,
+      "sendVerificationEmailOnSignUp": false
+    },
+    "allow_localhost": true,
+    "plugin_configs": {
+      "magicLink": {
+        "config": {
+          "expiresIn": 5,
+          "disableSignUp": false
+        },
+        "enabled": false
+      },
+      "phoneNumber": {
+        "config": {
+          "otp_expires_in": 300
+        },
+        "enabled": false
+      },
+      "organization": {
+        "config": {
+          "creatorRole": "owner",
+          "membershipLimit": 100,
+          "organizationLimit": 10,
+          "sendInvitationEmail": false
+        },
+        "enabled": true
+      }
+    },
+    "webhook_config": {
+      "enabled": false,
+      "enabledEvents": [],
+      "timeoutSeconds": 5
+    }
+  }
+]

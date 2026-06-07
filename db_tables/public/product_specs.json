@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "Protsessor",
+    "value_uz": "Apple A17 Pro (6 yadro)",
+    "sort_order": 1
+  },
+  {
+    "id": 2,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "Operativ xotira",
+    "value_uz": "8 GB",
+    "sort_order": 2
+  },
+  {
+    "id": 3,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "Ichki xotira",
+    "value_uz": "256 GB",
+    "sort_order": 3
+  },
+  {
+    "id": 4,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "Displey",
+    "value_uz": "6.7\" Super Retina XDR OLED",
+    "sort_order": 4
+  },
+  {
+    "id": 5,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "Kamera",
+    "value_uz": "48MP + 12MP + 12MP",
+    "sort_order": 5
+  },
+  {
+    "id": 6,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "Batareya",
+    "value_uz": "4422 mAh",
+    "sort_order": 6
+  },
+  {
+    "id": 7,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "OS",
+    "value_uz": "iOS 17",
+    "sort_order": 7
+  },
+  {
+    "id": 8,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "SIM",
+    "value_uz": "Nano-SIM + eSIM",
+    "sort_order": 8
+  },
+  {
+    "id": 9,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "5G",
+    "value_uz": "Ha",
+    "sort_order": 9
+  },
+  {
+    "id": 10,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "key_uz": "Og'irlik",
+    "value_uz": "221 g",
+    "sort_order": 10
+  },
+  {
+    "id": 11,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "Protsessor",
+    "value_uz": "Snapdragon 8 Gen 3",
+    "sort_order": 1
+  },
+  {
+    "id": 12,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "Operativ xotira",
+    "value_uz": "12 GB",
+    "sort_order": 2
+  },
+  {
+    "id": 13,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "Ichki xotira",
+    "value_uz": "512 GB",
+    "sort_order": 3
+  },
+  {
+    "id": 14,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "Displey",
+    "value_uz": "6.8\" Dynamic AMOLED 2X",
+    "sort_order": 4
+  },
+  {
+    "id": 15,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "Kamera",
+    "value_uz": "200MP + 50MP + 12MP + 10MP",
+    "sort_order": 5
+  },
+  {
+    "id": 16,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "Batareya",
+    "value_uz": "5000 mAh",
+    "sort_order": 6
+  },
+  {
+    "id": 17,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "S Pen",
+    "value_uz": "Ha (ichida)",
+    "sort_order": 7
+  },
+  {
+    "id": 18,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "OS",
+    "value_uz": "Android 14 / One UI 6.1",
+    "sort_order": 8
+  },
+  {
+    "id": 19,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "5G",
+    "value_uz": "Ha",
+    "sort_order": 9
+  },
+  {
+    "id": 20,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "key_uz": "Og'irlik",
+    "value_uz": "232 g",
+    "sort_order": 10
+  },
+  {
+    "id": 21,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "Protsessor",
+    "value_uz": "Apple M2 (8 yadro CPU)",
+    "sort_order": 1
+  },
+  {
+    "id": 22,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "GPU",
+    "value_uz": "8 yadro GPU",
+    "sort_order": 2
+  },
+  {
+    "id": 23,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "Operativ xotira",
+    "value_uz": "8 GB Unified Memory",
+    "sort_order": 3
+  },
+  {
+    "id": 24,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "SSD",
+    "value_uz": "256 GB",
+    "sort_order": 4
+  },
+  {
+    "id": 25,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "Displey",
+    "value_uz": "13.6\" Liquid Retina 2560x1664",
+    "sort_order": 5
+  },
+  {
+    "id": 26,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "Batareya",
+    "value_uz": "52.6 Wh (18 soat)",
+    "sort_order": 6
+  },
+  {
+    "id": 27,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "Portlar",
+    "value_uz": "2x Thunderbolt 4, MagSafe",
+    "sort_order": 7
+  },
+  {
+    "id": 28,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "Og'irlik",
+    "value_uz": "1.24 kg",
+    "sort_order": 8
+  },
+  {
+    "id": 29,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "OS",
+    "value_uz": "macOS Ventura",
+    "sort_order": 9
+  },
+  {
+    "id": 30,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "key_uz": "Rang",
+    "value_uz": "Space Gray",
+    "sort_order": 10
+  }
+]

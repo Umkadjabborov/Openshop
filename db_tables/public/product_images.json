@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "image_url": "/images/products/iphone15pm-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  },
+  {
+    "id": 2,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "image_url": "/images/products/iphone15pm-2.jpg",
+    "is_main": false,
+    "sort_order": 2
+  },
+  {
+    "id": 3,
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "image_url": "/images/products/iphone15pm-3.jpg",
+    "is_main": false,
+    "sort_order": 3
+  },
+  {
+    "id": 4,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "image_url": "/images/products/s24ultra-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  },
+  {
+    "id": 5,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "image_url": "/images/products/s24ultra-2.jpg",
+    "is_main": false,
+    "sort_order": 2
+  },
+  {
+    "id": 6,
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "image_url": "/images/products/s24ultra-3.jpg",
+    "is_main": false,
+    "sort_order": 3
+  },
+  {
+    "id": 7,
+    "product_id": "a6413d7a-7752-4f9c-9086-744968350cfd",
+    "image_url": "/images/products/xiaomi14u-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  },
+  {
+    "id": 8,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "image_url": "/images/products/macbookm2-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  },
+  {
+    "id": 9,
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "image_url": "/images/products/macbookm2-2.jpg",
+    "is_main": false,
+    "sort_order": 2
+  },
+  {
+    "id": 10,
+    "product_id": "bc940f41-3841-4a87-a6ed-3629502042e3",
+    "image_url": "/images/products/dellxps15-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  },
+  {
+    "id": 11,
+    "product_id": "11f1cf6a-7f29-44e1-834d-9b6638c85135",
+    "image_url": "/images/products/samsungtv-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  },
+  {
+    "id": 12,
+    "product_id": "cffc9972-6ea7-4b7a-92a4-1da2b5df99e5",
+    "image_url": "/images/products/lgoled65-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  },
+  {
+    "id": 13,
+    "product_id": "63ddfe64-ac46-48c6-8f5e-63cfd4acc7b3",
+    "image_url": "/images/products/sonywh1000-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  },
+  {
+    "id": 14,
+    "product_id": "226fb289-97b9-44a5-b309-490da0da0ee6",
+    "image_url": "/images/products/airpodspro2-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  },
+  {
+    "id": 15,
+    "product_id": "2bedc41c-9176-4bef-adf1-5cd22c3d5e0f",
+    "image_url": "/images/products/applewatch9-1.jpg",
+    "is_main": true,
+    "sort_order": 1
+  }
+]

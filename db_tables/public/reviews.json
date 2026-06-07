@@ -1,0 +1,112 @@
+[
+  {
+    "id": "cbb0ecbd-d141-4b48-adc5-1a186af07a13",
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "user_id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "rating": 5,
+    "title": "Ajoyib telefon!",
+    "body": "iPhone 15 Pro Max juda zo'r. Kamerasi hayratlanarli, tezkor. Tavsiya qilaman!",
+    "is_verified": true,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  },
+  {
+    "id": "f0903996-d35b-410d-b1c6-d435e583c0ee",
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "user_id": "29e1084c-a9c5-449d-a258-9811f7d16bde",
+    "rating": 4,
+    "title": "Yaxshi, lekin qimmat",
+    "body": "Sifat yaxshi, lekin narxi biroz yuqori. Umuman olganda mamnunman.",
+    "is_verified": false,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  },
+  {
+    "id": "458af8b3-2da0-4880-9bc0-3f9c65ed1fb4",
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "user_id": "29e1084c-a9c5-449d-a258-9811f7d16bde",
+    "rating": 5,
+    "title": "Eng yaxshi noutbuk!",
+    "body": "MacBook Air M2 eng yaxshi noutbuk. Batareya 1 kunda yetadi. Yengil va tez.",
+    "is_verified": true,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  },
+  {
+    "id": "242acf87-8225-4c6a-ae18-2e760350ad81",
+    "product_id": "63ddfe64-ac46-48c6-8f5e-63cfd4acc7b3",
+    "user_id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "rating": 5,
+    "title": "Zo'r quloqchin",
+    "body": "Sony WH-1000XM5 shovqinni to'sish borasida eng yaxshi. Musiqani yangicha eshitasiz.",
+    "is_verified": true,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  },
+  {
+    "id": "5d8e2430-431d-4bac-b144-3ba7f49db144",
+    "product_id": "11f1cf6a-7f29-44e1-834d-9b6638c85135",
+    "user_id": "965885c7-e419-4b0d-8868-e879ea648734",
+    "rating": 4,
+    "title": "Ajoyib TV",
+    "body": "Samsung QLED ranglari juda aniq. O'yin uchun ideal. Faqat narxi biroz baland.",
+    "is_verified": false,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  },
+  {
+    "id": "dcdaa97e-bdab-4612-9bee-5981e61c8ebb",
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "user_id": "82a8950f-c172-41b6-8ae3-285c39e0c822",
+    "rating": 5,
+    "title": "Super Galaxy!",
+    "body": "S24 Ultra dan mamnunman. S Pen qulay, kamera professional darajada.",
+    "is_verified": true,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  },
+  {
+    "id": "51edf0d9-08e5-4da9-bb76-1a3f1fe51841",
+    "product_id": "226fb289-97b9-44a5-b309-490da0da0ee6",
+    "user_id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "rating": 5,
+    "title": "AirPods Pro 2 \u2014 ideal!",
+    "body": "Ovozi toza, ANC juda kuchli. Apple mahsuloti sifatida yuqori daraja.",
+    "is_verified": true,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  },
+  {
+    "id": "dfb1af86-9835-473b-8f47-f57572718f2c",
+    "product_id": "2bedc41c-9176-4bef-adf1-5cd22c3d5e0f",
+    "user_id": "1dc06bd1-49cc-4a43-b69e-8c0eae550355",
+    "rating": 4,
+    "title": "Yaxshi soat",
+    "body": "Apple Watch Series 9 qulay. Salomatlikni kuzatish funksiyalari foydali.",
+    "is_verified": true,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  },
+  {
+    "id": "da902f6e-33be-41d7-839d-564acc9dbfcc",
+    "product_id": "cffc9972-6ea7-4b7a-92a4-1da2b5df99e5",
+    "user_id": "fb8c073a-f71b-4df3-b23c-4b4aea7b3e22",
+    "rating": 5,
+    "title": "LG OLED \u2014 boshqa dunyo!",
+    "body": "Rang sifati va qoralik darajasi hayratlanarli. Kino ko'rish uchun ideal.",
+    "is_verified": true,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  },
+  {
+    "id": "33b36732-32ef-4d3d-8881-c6e9412f35f1",
+    "product_id": "a6413d7a-7752-4f9c-9086-744968350cfd",
+    "user_id": "e7b0f225-5049-4961-a0da-0d3124328a5f",
+    "rating": 4,
+    "title": "Yaxshi Xiaomi",
+    "body": "Leica kamera juda yaxshi. Faqat EMUI tizimiga ko'nikish kerak.",
+    "is_verified": false,
+    "is_approved": true,
+    "created_at": "2026-05-29 19:20:23.322009+00:00"
+  }
+]

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>OpenShop.uz — Onlayn Do'kon</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E63329;--red2:#C4271F;--red-light:#FDECEA;
+  --dark:#1A1A2E;--dark2:#2e2e4e;
+  --gold:#F5A623;--green:#27AE60;
+  --bg:#F4F6F8;--white:#fff;
+  --border:#E8EAED;--muted:#9AA0A6;--text:#1a1a1a;
+  --shadow:0 2px 8px rgba(0,0,0,.08);
+  --shadow2:0 8px 24px rgba(0,0,0,.14);
+  --r:10px;--r2:16px;--r3:24px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:'Nunito',sans-serif;border:none;background:none}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:#f1f1f1}
+::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--red)}
+ 
+/* LAYOUT */
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 24px}}
+@media(min-width:1024px){.wrap{padding:0 32px}}
+ 
+/* HEADER */
+.topbar{background:var(--dark);color:#ccc;font-size:.78rem;padding:7px 0}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar a{color:#fff;display:flex;align-items:center;gap:5px;font-weight:600;font-size:.78rem}
+.topbar a:hover{color:var(--gold)}
+.header{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.10);position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;gap:12px;padding:12px 0}
+.logo{font-size:1.5rem;font-weight:900;color:var(--red);letter-spacing:-1px;white-space:nowrap}
+.logo span{color:var(--dark)}
+.catalog-btn{display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:10px 18px;border-radius:var(--r);font-weight:800;font-size:.88rem;white-space:nowrap;transition:background .15s}
+.catalog-btn:hover{background:var(--red2)}
+.search-wrap{flex:1;position:relative}
+.search-input{width:100%;padding:10px 44px 10px 16px;border:1.5px solid var(--border);border-radius:var(--r3);font-family:'Nunito',sans-serif;font-size:.92rem;background:var(--bg);transition:border-color .15s,box-shadow .15s;outline:none}
+.search-input:focus{border-color:var(--red);box-shadow:0 0 0 3px var(--red-light);background:#fff}
+.search-btn{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);background:none;border:none;font-size:1.1rem;cursor:pointer}
+.header-actions{display:flex;align-items:center;gap:4px}
+.hbtn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 10px;border-radius:var(--r);color:var(--muted);font-size:.65rem;font-weight:700;transition:color .15s,background .15s;position:relative;cursor:pointer}
+.hbtn:hover{color:var(--red);background:var(--red-light)}
+.hbtn svg{width:22px;height:22px}
+.hbadge{position:absolute;top:2px;right:4px;background:var(--red);color:#fff;font-size:.6rem;font-weight:900;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px}
+ 
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);height:60px;z-index:150;box-shadow:0 -3px 12px rgba(0,0,0,.08)}
+.mobile-nav .wrap{display:flex;height:100%;align-items:center;justify-content:space-around}
+.mnbtn{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--muted);font-size:.62rem;font-weight:700;cursor:pointer;transition:color .15s;position:relative;padding:4px 8px}
+.mnbtn.active{color:var(--red)}
+.mnbtn svg{width:20px;height:20px}
+ 
+/* BANNER */
+.banner-section{padding:16px 0}
+.banner-slider{border-radius:var(--r2);overflow:hidden;position:relative;height:280px}
+@media(min-width:768px){.banner-slider{height:360px}}
+.banner-track{display:flex;height:100%;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+.banner-slide{min-width:100%;height:100%;position:relative;display:flex;align-items:center;overflow:hidden}
+.b1{background:linear-gradient(135deg,#1a1a2e 0%,#2a2a4e 50%,#e63329 100%)}
+.b2{background:linear-gradient(135deg,#0f4c3a 0%,#1a7a5e 50%,#f5a623 100%)}
+.b3{background:linear-gradient(135deg,#2c1a4e 0%,#4a2e7a 50%,#e63329 100%)}
+.banner-content{padding:32px 40px;color:#fff;z-index:2;position:relative}
+.banner-tag{display:inline-block;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);padding:4px 14px;border-radius:20px;font-size:.8rem;font-weight:700;margin-bottom:12px;letter-spacing:.05em}
+.banner-title{font-size:1.8rem;font-weight:900;line-height:1.2;margin-bottom:8px}
+@media(min-width:768px){.banner-title{font-size:2.5rem}}
+.banner-sub{font-size:1rem;opacity:.85;margin-bottom:20px}
+.banner-price{font-size:1.5rem;font-weight:900;color:var(--gold)}
+.banner-old{font-size:.9rem;opacity:.6;text-decoration:line-through}
+.banner-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--red);padding:12px 28px;border-radius:var(--r);font-weight:800;font-size:.9rem;margin-top:16px;transition:transform .15s,box-shadow .15s}
+.banner-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.banner-img-right{position:absolute;right:-20px;bottom:0;height:100%;object-fit:contain;opacity:.9;pointer-events:none}
+.banner-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5}
+.bdot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.4);cursor:pointer;transition:width .2s,background .2s}
+.bdot.on{width:24px;background:#fff}
+.banner-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:5;box-shadow:var(--shadow);cursor:pointer;border:none;transition:background .15s,transform .15s}
+.banner-arrow:hover{background:#fff;transform:translateY(-50%) scale(1.1)}
+.ba-prev{left:12px}.ba-next{right:12px}
+ 
+/* SECTION */
+.section{padding:24px 0}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.sec-title{font-size:1.2rem;font-weight:900;color:var(--text)}
+.sec-title b{color:var(--red)}
+.sec-more{font-size:.85rem;font-weight:700;color:var(--red);display:flex;align-items:center;gap:4px}
+.sec-more:hover{text-decoration:underline}
+ 
+/* CATEGORY GRID */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(min-width:480px){.cat-grid{grid-template-columns:repeat(5,1fr)}}
+@media(min-width:640px){.cat-grid{grid-template-columns:repeat(6,1fr)}}
+@media(min-width:1024px){.cat-grid{grid-template-columns:repeat(8,1fr)}}
+.cat-card{background:#fff;border-radius:var(--r2);box-shadow:var(--shadow);padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;border:2px solid transparent;transition:border-color .15s,transform .2s,box-shadow .2s;text-align:center}
+.cat-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:var(--shadow2)}
+.cat-icon{font-size:1.8rem;line-height:1}
+.cat-name{font-size:.72rem;font-weight:700;color:var(--text);line-height:1.3}
+ 
+/* FLASH SALE */
+.flash-section{background:var(--red);border-radius:var(--r2);padding:20px;margin:0 0 24px}
+.flash-head{display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.flash-title{font-size:1.2rem;font-weight:900;color:#fff;display:flex;align-items:center;gap:8px}
+.countdown{display:flex;align-items:center;gap:4px}
+.cd-box{background:#fff;color:var(--red);font-weight:900;font-size:1rem;min-width:34px;height:34px;border-radius:6px;display:flex;align-items:center;justify-content:center;letter-spacing:-.02em}
+.cd-sep{color:rgba(255,255,255,.7);font-weight:900;font-size:1.1rem;padding-bottom:2px}
+.flash-scroll{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.flash-scroll::-webkit-scrollbar{display:none}
+ 
+/* PRODUCT GRID */
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:480px){.prod-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:768px){.prod-grid{grid-template-columns:repeat(4,1fr);gap:14px}}
+@media(min-width:1024px){.prod-grid{grid-template-columns:repeat(5,1fr)}}
+ 
+/* PRODUCT CARD */
+.pc{background:#fff;border-radius:var(--r2);box-shadow:var(--shadow);overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;display:flex;flex-direction:column;min-width:160px}
+.pc:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+.pc-img-wrap{position:relative;aspect-ratio:1/1;background:#f9f9f9;overflow:hidden}
+.pc-img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .3s}
+.pc:hover .pc-img{transform:scale(1.05)}
+.pc-badge{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;gap:3px}
+.badge-d{background:var(--red);color:#fff;font-size:.65rem;font-weight:900;padding:2px 7px;border-radius:4px}
+.badge-n{background:var(--green);color:#fff;font-size:.65rem;font-weight:900;padding:2px 7px;border-radius:4px}
+.pc-wish{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;background:#fff;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:border-color .15s,transform .15s}
+.pc-wish:hover{border-color:var(--red);transform:scale(1.1)}
+.pc-wish.on{background:var(--red-light);border-color:var(--red)}
+.pc-wish.on svg{stroke:var(--red);fill:var(--red)}
+.pc-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pc-brand{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pc-name{font-size:.82rem;font-weight:700;color:var(--text);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pc-stars{display:flex;align-items:center;gap:3px;font-size:.72rem;color:var(--muted)}
+.pc-stars span{color:var(--gold)}
+.pc-price-row{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-top:2px}
+.pc-price{font-size:.95rem;font-weight:900;color:var(--red)}
+.pc-old{font-size:.75rem;color:var(--muted);text-decoration:line-through;font-weight:600}
+.pc-cart{width:100%;padding:9px;background:var(--red);color:#fff;border-radius:var(--r);font-size:.82rem;font-weight:800;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .15s,transform .1s;margin-top:auto}
+.pc-cart:hover{background:var(--red2)}
+.pc-cart:active{transform:scale(.97)}
+ 
+/* FLASH PRODUCT CARD — fixed width */
+.fpc{min-width:160px;max-width:180px;flex-shrink:0}
+ 
+/* APP BANNER */
+.app-banner{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 60%,var(--red) 100%);border-radius:var(--r2);padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#fff;overflow:hidden;position:relative;margin:24px 0}
+.app-banner::before{content:'';position:absolute;top:-50px;right:-50px;width:220px;height:220px;background:rgba(255,255,255,.04);border-radius:50%}
+.app-banner-text h3{font-size:1.2rem;font-weight:900;margin-bottom:6px}
+.app-banner-text p{font-size:.85rem;opacity:.8;margin-bottom:14px}
+.app-btns{display:flex;gap:10px;flex-wrap:wrap}
+.app-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);color:#fff;padding:8px 16px;border-radius:var(--r);font-size:.82rem;font-weight:700;transition:background .15s}
+.app-btn:hover{background:rgba(255,255,255,.25)}
+.app-btn svg{width:18px;height:18px}
+.app-qr{width:80px;height:80px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.app-qr svg{width:64px;height:64px}
+ 
+/* FOOTER */
+footer{background:var(--dark);color:#ccc;padding:40px 0 24px;margin-top:32px}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer-grid{grid-template-columns:1fr 1fr 1fr 1fr 1.5fr}}
+.footer-title{color:#fff;font-size:.9rem;font-weight:800;margin-bottom:12px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:7px}
+.footer-links a{font-size:.8rem;color:#9aa0a6;transition:color .15s}
+.footer-links a:hover{color:var(--red)}
+.footer-contact{font-size:.85rem;line-height:1.8}
+.footer-contact a{color:#fff;font-weight:700}
+.footer-contact a:hover{color:var(--gold)}
+.social-row{display:flex;gap:10px;margin:12px 0}
+.social-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:background .15s}
+.social-btn:hover{background:var(--red)}
+.social-btn svg{width:16px;height:16px;stroke:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:32px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap}
+.footer-payments{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pay-badge{background:rgba(255,255,255,.1);border-radius:6px;padding:4px 10px;font-size:.75rem;font-weight:700;color:#fff}
+ 
+/* CART NOTIFICATION */
+.cart-toast{position:fixed;bottom:80px;right:16px;background:var(--green);color:#fff;padding:12px 20px;border-radius:var(--r);font-weight:700;font-size:.88rem;box-shadow:var(--shadow2);z-index:999;transform:translateY(20px);opacity:0;transition:all .3s;pointer-events:none}
+.cart-toast.show{transform:translateY(0);opacity:1}
+ 
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:80px;right:16px;width:42px;height:42px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(230,51,41,.4);z-index:90;cursor:pointer;border:none;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
+.scroll-top.show{opacity:1;pointer-events:all}
+.scroll-top:hover{transform:translateY(-3px)}
+ 
+/* UTILS */
+.hidden{display:none!important}
+@media(max-width:768px){
+  .topbar{display:none}
+  .header-actions .hbtn:not(.mob-show){display:none}
+  .mobile-nav{display:flex}
+  .catalog-btn span{display:none}
+  body{padding-bottom:60px}
+}
+@media(max-width:480px){
+  .banner-slider{height:220px}
+  .banner-title{font-size:1.3rem}
+  .banner-sub,.banner-old{display:none}
+  .logo{font-size:1.2rem}
+}
+ 
+/* SKELETON */
+@keyframes shimmer{0%{background-position:-700px 0}100%{background-position:700px 0}}
+.skel{background:linear-gradient(90deg,#f0f0f0 25%,#e8e8e8 50%,#f0f0f0 75%);background-size:700px 100%;animation:shimmer 1.5s infinite linear;border-radius:var(--r)}
+ 
+/* STAR SVG helper */
+.star-svg{display:inline-block;vertical-align:middle}
+</style>
+</head>
+<body>
+ 
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <a href="https://t.me/openshop_chatbot" target="_blank">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 3L3 10.5l6.5 2L17 7l-4.5 7 2 6.5L21 3z"/></svg>
+        Telegram operator
+      </a>
+      <a href="tel:+998712036660">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +998 71 203 66 60
+      </a>
+    </div>
+    <div style="display:flex;gap:16px">
+      <span>Har kuni 9:00–22:00</span>
+      <a href="#" style="color:#fff">O'zbekiston</a>
+    </div>
+  </div>
+</div>
+ 
+<!-- HEADER -->
+<header class="header">
+  <div class="wrap">
+    <div class="header-inner">
+      <a href="#" class="logo">Open<span>Shop</span></a>
+      <button class="catalog-btn" onclick="alert('Katalog ochilmoqda...')">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span>Katalog</span>
+      </button>
+      <div class="search-wrap">
+        <input class="search-input" type="text" placeholder="Smartfon, noutbuk, televizor..."/>
+        <button class="search-btn">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+      </div>
+      <div class="header-actions">
+        <div class="hbtn mob-show" onclick="scrollToSection('wishlist-sec')">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          Sevimli
+          <span class="hbadge" id="wishCount">0</span>
+        </div>
+        <div class="hbtn mob-show" onclick="scrollToSection('cart-sec')">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          Savat
+          <span class="hbadge" id="cartCount">0</span>
+        </div>
+        <div class="hbtn">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Kirish
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+ 
+<!-- MOBILE NAV -->
+<nav class="mobile-nav">
+  <div class="wrap">
+    <div class="mnbtn active" onclick="setMobActive(this)">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Asosiy
+    </div>
+    <div class="mnbtn" onclick="setMobActive(this);alert('Katalog ochilmoqda...')">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      Katalog
+    </div>
+    <div class="mnbtn" onclick="setMobActive(this);scrollToSection('cart-sec')" style="position:relative">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      Savat
+      <span class="hbadge" id="cartCountMob">0</span>
+    </div>
+    <div class="mnbtn" onclick="setMobActive(this);scrollToSection('wishlist-sec')">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      Sevimli
+    </div>
+    <div class="mnbtn" onclick="setMobActive(this)">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Kabinet
+    </div>
+  </div>
+</nav>
+ 
+<!-- MAIN -->
+<main>
+  <div class="wrap">
+ 
+    <!-- BANNER -->
+    <div class="banner-section">
+      <div class="banner-slider" id="bannerSlider">
+        <div class="banner-track" id="bannerTrack">
+          <!-- Slide 1 -->
+          <div class="banner-slide b1">
+            <div class="banner-content">
+              <div class="banner-tag">🔥 Eng sara taklif</div>
+              <div class="banner-title">iPhone 15 Pro Max<br>256GB Titanium</div>
+              <div class="banner-sub">Apple A17 Pro chip • 48MP kamera</div>
+              <div style="display:flex;align-items:baseline;gap:10px;margin-top:8px">
+                <div class="banner-price">12 999 000 so'm</div>
+                <div class="banner-old">14 500 000 so'm</div>
+              </div>
+              <a href="#" class="banner-btn">
+                Hozir sotib ol
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+            <div style="position:absolute;right:40px;bottom:0;height:90%;display:flex;align-items:flex-end;opacity:.25">
+              <svg width="200" height="260" viewBox="0 0 100 130" fill="white"><rect x="10" y="0" width="80" height="130" rx="12"/><rect x="35" y="3" width="30" height="4" rx="2" fill="rgba(0,0,0,.3)"/><rect x="15" y="12" width="70" height="100" rx="4" fill="rgba(0,0,0,.2)"/><circle cx="50" cy="120" r="5" fill="rgba(0,0,0,.3)"/></svg>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="banner-slide b2">
+            <div class="banner-content">
+              <div class="banner-tag">💻 Noutbuklar</div>
+              <div class="banner-title">MacBook Air M2<br>13" 8GB/256GB</div>
+              <div class="banner-sub">Apple Silicon • 18 soat batareya</div>
+              <div style="display:flex;align-items:baseline;gap:10px;margin-top:8px">
+                <div class="banner-price">16 490 000 so'm</div>
+                <div class="banner-old">18 000 000 so'm</div>
+              </div>
+              <a href="#" class="banner-btn" style="color:#0f4c3a">
+                Batafsil
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+            <div style="position:absolute;right:40px;bottom:0;height:85%;display:flex;align-items:flex-end;opacity:.2">
+              <svg width="260" height="180" viewBox="0 0 130 90" fill="white"><rect x="5" y="0" width="120" height="78" rx="8"/><rect x="10" y="5" width="110" height="65" rx="4" fill="rgba(0,0,0,.2)"/><rect x="0" y="78" width="130" height="10" rx="3"/><rect x="45" y="80" width="40" height="6" rx="3" fill="rgba(0,0,0,.2)"/></svg>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="banner-slide b3">
+            <div class="banner-content">
+              <div class="banner-tag">📺 Televizorlar</div>
+              <div class="banner-title">Samsung QLED<br>55" 4K Smart TV</div>
+              <div class="banner-sub">Quantum HDR • 120Hz panel</div>
+              <div style="display:flex;align-items:baseline;gap:10px;margin-top:8px">
+                <div class="banner-price">8 990 000 so'm</div>
+                <div class="banner-old">11 200 000 so'm</div>
+              </div>
+              <a href="#" class="banner-btn" style="color:#2c1a4e">
+                Ko'rish
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button class="banner-arrow ba-prev" onclick="slideBanner(-1)">
+          <svg width="18" height="18" fill="none" stroke="#333" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="banner-arrow ba-next" onclick="slideBanner(1)">
+          <svg width="18" height="18" fill="none" stroke="#333" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="banner-dots" id="bannerDots"></div>
+      </div>
+    </div>
+ 
+    <!-- APP BANNER -->
+    <div class="app-banner">
+      <div class="app-banner-text">
+        <h3>📱 Ilovani yuklab oling!</h3>
+        <p>Ko'proq chegirmalar va qulay buyurtma berish uchun</p>
+        <div class="app-btns">
+          <a href="#" class="app-btn">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            App Store
+          </a>
+          <a href="#" class="app-btn">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76A1 1 0 012 22.89V1.11a1 1 0 011.18-.87l11.63 10.94-11.63 12.58zM20.43 10.3l-2.72-1.57-3.09 2.9 3.09 2.9 2.75-1.59a1.59 1.59 0 000-2.64zM4.34 1.23l11.05 10.39-3.09-2.9L4.34 1.23zm0 21.54l7.96-7.49-3.09-2.9L4.34 22.77z"/></svg>
+            Google Play
+          </a>
+        </div>
+      </div>
+      <div class="app-qr">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="24" height="24" rx="2" fill="none" stroke="#333" stroke-width="3"/>
+          <rect x="10" y="10" width="12" height="12" fill="#333"/>
+          <rect x="36" y="4" width="24" height="24" rx="2" fill="none" stroke="#333" stroke-width="3"/>
+          <rect x="42" y="10" width="12" height="12" fill="#333"/>
+          <rect x="4" y="36" width="24" height="24" rx="2" fill="none" stroke="#333" stroke-width="3"/>
+          <rect x="10" y="42" width="12" height="12" fill="#333"/>
+          <rect x="36" y="36" width="6" height="6" fill="#333"/>
+          <rect x="46" y="36" width="6" height="6" fill="#333"/>
+          <rect x="36" y="46" width="6" height="6" fill="#333"/>
+          <rect x="46" y="46" width="6" height="6" fill="#333"/>
+          <rect x="56" y="56" width="4" height="4" fill="#333"/>
+        </svg>
+      </div>
+    </div>
+ 
+    <!-- CATEGORIES -->
+    <section class="section">
+      <div class="sec-head">
+        <h2 class="sec-title">📦 <b>Kategoriyalar</b></h2>
+        <a href="#" class="sec-more">Barchasi →</a>
+      </div>
+      <div class="cat-grid" id="catGrid"></div>
+    </section>
+ 
+    <!-- FLASH SALE -->
+    <div class="flash-section">
+      <div class="flash-head">
+        <div class="flash-title">
+          ⚡ Chegirmalar
+        </div>
+        <div class="countdown" id="countdown"></div>
+      </div>
+      <div class="flash-scroll" id="flashScroll"></div>
+    </div>
+ 
+    <!-- RECOMMENDED -->
+    <section class="section">
+      <div class="sec-head">
+        <h2 class="sec-title">⭐ <b>Tavsiya etamiz</b></h2>
+        <a href="#" class="sec-more">Barchasi →</a>
+      </div>
+      <div class="prod-grid" id="recGrid"></div>
+    </section>
+ 
+    <!-- NEW PRODUCTS -->
+    <section class="section">
+      <div class="sec-head">
+        <h2 class="sec-title">🆕 <b>Yangi mahsulotlar</b></h2>
+        <a href="#" class="sec-more">Barchasi →</a>
+      </div>
+      <div class="prod-grid" id="newGrid"></div>
+    </section>
+ 
+    <!-- CART SECTION -->
+    <section class="section" id="cart-sec">
+      <div class="sec-head">
+        <h2 class="sec-title">🛒 <b>Savat</b></h2>
+      </div>
+      <div id="cartBody" style="background:#fff;border-radius:var(--r2);box-shadow:var(--shadow);padding:24px;min-height:120px"></div>
+    </section>
+ 
+  </div>
+</main>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">OpenShop.uz</div>
+        <div class="footer-contact">
+          <a href="tel:+998712036660">+998 (71) 203 66 60</a><br>
+          Har kuni 9:00 dan 22:00 gacha<br>
+          <a href="mailto:info@openshop.uz" style="color:#9aa0a6;font-weight:400">info@openshop.uz</a>
+        </div>
+        <div class="social-row">
+          <a href="https://instagram.com/openshop_uz" class="social-btn" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+          </a>
+          <a href="https://t.me/OPENSHOP_UZ" class="social-btn" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 3L3 10.5l6.5 2L17 7l-4.5 7 2 6.5L21 3z"/></svg>
+          </a>
+          <a href="https://youtube.com/@Openshop_uz" class="social-btn" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="3"/><polygon points="10,9 16,12.5 10,16" fill="white" stroke="none"/></svg>
+          </a>
+          <a href="https://facebook.com/openshop.uz" class="social-btn" target="_blank">
+            <svg viewBox="0 0 24 24" fill="white" stroke="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Buyurtma</div>
+        <ul class="footer-links">
+          <li><a href="#">Atamalar va ta'riflar</a></li>
+          <li><a href="#">Ro'yxatdan o'tish</a></li>
+          <li><a href="#">Ommaviy Oferta</a></li>
+          <li><a href="#">Izohlarni nashr etish</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">To'lov va yetkazish</div>
+        <ul class="footer-links">
+          <li><a href="#">Mahsulot narxi</a></li>
+          <li><a href="#">Tovarlarni topshirish</a></li>
+          <li><a href="#">Mahsulot kafolati</a></li>
+          <li><a href="#">Sotib oluvchi da'volari</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Qaytarish</div>
+        <ul class="footer-links">
+          <li><a href="#">Sifatli tovarni qaytarish</a></li>
+          <li><a href="#">Nuqsonli tovarni qaytarish</a></li>
+          <li><a href="#">Huquqiy asoslar</a></li>
+          <li><a href="#">Yakuniy qoidalar</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">To'lov usullari</div>
+        <div class="footer-payments">
+          <span class="pay-badge">Uzcard</span>
+          <span class="pay-badge">Humo</span>
+          <span class="pay-badge">Visa</span>
+          <span class="pay-badge">Click</span>
+          <span class="pay-badge">Payme</span>
+          <span class="pay-badge">Ipak Yo'li</span>
+        </div>
+        <div style="margin-top:16px;font-size:.8rem;color:#666">
+          <a href="/page/locations" style="color:#9aa0a6">📍 Bizning do'konlarimiz</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom" style="margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <span style="font-size:.8rem;color:#666">© 2018–2026 "OPEN SHOP" MCHJ STIR 307095613</span>
+      <a href="https://openshop.uz/app-download" style="font-size:.8rem;color:#9aa0a6">📱 Ilovani yuklab olish</a>
+    </div>
+  </div>
+</footer>
+ 
+<!-- TOAST -->
+<div class="cart-toast" id="cartToast">✓ Savatga qo'shildi!</div>
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+ 
+<script>
+// ─── DATA ───────────────────────────────────────────────────────────────────
+const CATS=[
+  {icon:'📱',name:'Smartfonlar'},{icon:'💻',name:'Noutbuklar'},
+  {icon:'📺',name:'Televizorlar'},{icon:'🎮',name:'Konsol'},
+  {icon:'🎧',name:'Audio'},{icon:'📷',name:'Kameralar'},
+  {icon:'❄️',name:'Maishiy'},{icon:'⌚',name:'Smart soat'},
+  {icon:'🖨️',name:'Printerlar'},{icon:'💡',name:'Aksessuarlar'},
+  {icon:'🔋',name:'Batareya'},{icon:'🖥️',name:'Monitorlar'},
+  {icon:'📡',name:'Router'},{icon:'🎒',name:'Sumkalar'},
+  {icon:'🖱️',name:'Kompyuter'},{icon:'🔌',name:'Kabellar'},
+];
+ 
+const PRODUCTS=[
+  {id:1,name:'iPhone 15 Pro Max 256GB Natural Titanium',brand:'Apple',cat:'Smartfonlar',price:12999000,old:14500000,disc:10,rating:4.8,rev:245,isNew:false,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="60" y="10" width="80" height="180" rx="12" fill="%23555"/><rect x="65" y="15" width="70" height="165" rx="9" fill="%23222"/><rect x="78" y="12" width="44" height="6" rx="3" fill="%23444"/><circle cx="100" cy="170" r="7" fill="%23444"/></svg>'},
+  {id:2,name:'Samsung Galaxy S24 Ultra 12/512GB Titanium Black',brand:'Samsung',cat:'Smartfonlar',price:11499000,old:12999000,disc:12,rating:4.7,rev:189,isNew:false,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="62" y="10" width="76" height="180" rx="14" fill="%23222"/><rect x="66" y="14" width="68" height="162" rx="10" fill="%23111"/><rect x="90" y="11" width="20" height="5" rx="2" fill="%23333"/></svg>'},
+  {id:3,name:'MacBook Air M2 13" 8GB/256GB Space Gray',brand:'Apple',cat:'Noutbuklar',price:16490000,old:18000000,disc:8,rating:4.9,rev:312,isNew:false,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="20" y="40" width="160" height="100" rx="8" fill="%23888"/><rect x="25" y="44" width="150" height="88" rx="5" fill="%23222"/><rect x="10" y="140" width="180" height="14" rx="4" fill="%23999"/><rect x="70" y="143" width="60" height="8" rx="3" fill="%23777"/></svg>'},
+  {id:4,name:'Sony WH-1000XM5 Wireless Noise Cancelling',brand:'Sony',cat:'Audio',price:2990000,old:3500000,disc:15,rating:4.8,rev:428,isNew:false,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><path d="M50 100 Q50 50 100 50 Q150 50 150 100" fill="none" stroke="%23222" stroke-width="12" stroke-linecap="round"/><circle cx="50" cy="110" r="22" fill="%23333"/><circle cx="150" cy="110" r="22" fill="%23333"/></svg>'},
+  {id:5,name:'Samsung QLED 55" 4K Smart TV QE55Q80C',brand:'Samsung',cat:'Televizorlar',price:8990000,old:11200000,disc:20,rating:4.6,rev:156,isNew:false,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="15" y="35" width="170" height="105" rx="6" fill="%23222"/><rect x="20" y="40" width="160" height="95" rx="3" fill="%23111"/><rect x="85" y="140" width="30" height="20" fill="%23333"/><rect x="50" y="158" width="100" height="8" rx="3" fill="%23333"/></svg>'},
+  {id:6,name:'Xiaomi 14 Ultra 12/512GB Black',brand:'Xiaomi',cat:'Smartfonlar',price:9499000,old:null,disc:0,rating:4.7,rev:98,isNew:true,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="58" y="10" width="84" height="180" rx="15" fill="%23111"/><rect x="62" y="14" width="76" height="163" rx="11" fill="%23222"/><circle cx="100" cy="50" r="18" fill="%23111"/><circle cx="100" cy="50" r="8" fill="%23444"/></svg>'},
+  {id:7,name:'Apple AirPods Pro 2nd Generation MagSafe',brand:'Apple',cat:'Audio',price:2299000,old:2699000,disc:15,rating:4.9,rev:634,isNew:false,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="65" y="50" width="70" height="100" rx="20" fill="%23ddd" stroke="%23ccc" stroke-width="2"/><circle cx="80" cy="90" r="8" fill="%23fff"/><circle cx="120" cy="90" r="8" fill="%23fff"/><line x1="72" y1="100" x2="72" y2="130" stroke="%23ccc" stroke-width="4" stroke-linecap="round"/><line x1="128" y1="100" x2="128" y2="130" stroke="%23ccc" stroke-width="4" stroke-linecap="round"/></svg>'},
+  {id:8,name:'Dell XPS 15 9530 Intel Core i7 16/512GB',brand:'Dell',cat:'Noutbuklar',price:14990000,old:16500000,disc:9,rating:4.7,rev:87,isNew:false,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="18" y="38" width="164" height="104" rx="7" fill="%23444"/><rect x="23" y="43" width="154" height="90" rx="4" fill="%23111"/><rect x="8" y="142" width="184" height="16" rx="5" fill="%23555"/><rect x="72" y="145" width="56" height="9" rx="3" fill="%23444"/></svg>'},
+  {id:9,name:'Apple Watch Series 9 41mm Midnight',brand:'Apple',cat:'Smart soat',price:3699000,old:null,disc:0,rating:4.8,rev:201,isNew:true,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="70" y="40" width="60" height="72" rx="16" fill="%23222"/><rect x="75" y="45" width="50" height="62" rx="12" fill="%23111"/><rect x="90" y="22" width="20" height="20" rx="4" fill="%23555"/><rect x="90" y="112" width="20" height="20" rx="4" fill="%23555"/></svg>'},
+  {id:10,name:'LG OLED 65" C3 4K 120Hz Smart TV',brand:'LG',cat:'Televizorlar',price:15990000,old:18500000,disc:14,rating:4.9,rev:143,isNew:false,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="12" y="32" width="176" height="110" rx="5" fill="%23333"/><rect x="17" y="37" width="166" height="100" rx="3" fill="%230a0a0a"/><rect x="88" y="142" width="24" height="22" fill="%23444"/><rect x="45" y="162" width="110" height="7" rx="3" fill="%23444"/></svg>'},
+  {id:11,name:'Canon EOS R50 mirrorless kamera kit',brand:'Canon',cat:'Kameralar',price:7490000,old:8200000,disc:9,rating:4.6,rev:67,isNew:false,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="30" y="60" width="140" height="90" rx="10" fill="%23222"/><circle cx="100" cy="105" r="32" fill="%23333"/><circle cx="100" cy="105" r="22" fill="%23444"/><circle cx="100" cy="105" r="10" fill="%23111"/><rect x="130" y="65" width="20" height="15" rx="5" fill="%23333"/></svg>'},
+  {id:12,name:'Lenovo ThinkPad X1 Carbon Gen 11',brand:'Lenovo',cat:'Noutbuklar',price:19990000,old:null,disc:0,rating:4.8,rev:54,isNew:true,
+   img:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f5f5f5"/><rect x="20" y="42" width="160" height="100" rx="6" fill="%23111"/><rect x="25" y="47" width="150" height="86" rx="4" fill="%231a1a1a"/><rect x="10" y="142" width="180" height="14" rx="4" fill="%23222"/><circle cx="100" cy="149" r="4" fill="%23333"/></svg>'},
+];
+ 
+// ─── STATE ─────────────────────────────────────────────────────────────────
+let cart={};  // id → qty
+let wish=new Set();
+ 
+function fmt(n){return n.toLocaleString('uz-UZ').replace(/,/g,' ')+' so\'m'}
+ 
+function updateBadges(){
+  const tc=Object.values(cart).reduce((a,b)=>a+b,0);
+  document.getElementById('cartCount').textContent=tc;
+  document.getElementById('cartCountMob').textContent=tc;
+  document.getElementById('wishCount').textContent=wish.size;
+}
+ 
+function showToast(msg,color='#27AE60'){
+  const t=document.getElementById('cartToast');
+  t.textContent=msg;
+  t.style.background=color;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+ 
+function addCart(id){
+  cart[id]=(cart[id]||0)+1;
+  updateBadges();
+  showToast('✓ Savatga qo\'shildi!');
+  renderCart();
+}
+ 
+function toggleWish(id,btn){
+  if(wish.has(id)){wish.delete(id);btn.classList.remove('on');showToast('♡ Sevimlilardan o\'chirildi','#888')}
+  else{wish.add(id);btn.classList.add('on');showToast('♥ Sevimliga qo\'shildi','#E63329')}
+  updateBadges();
+}
+ 
+// ─── STARS ─────────────────────────────────────────────────────────────────
+function stars(r){
+  let s='';
+  for(let i=1;i<=5;i++){
+    s+=`<svg class="star-svg" width="12" height="12" viewBox="0 0 24 24" fill="${i<=Math.round(r)?'#F5A623':'#E0E0E0'}" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+  }
+  return s;
+}
+ 
+// ─── PRODUCT CARD HTML ─────────────────────────────────────────────────────
+function pcHTML(p,flash=false){
+  const w=wish.has(p.id);
+  return`<div class="pc${flash?' fpc':''}" onclick="void(0)">
+    <div class="pc-img-wrap">
+      <img class="pc-img" src="${p.img}" alt="${p.name}" loading="lazy"/>
+      <div class="pc-badge">
+        ${p.disc?`<span class="badge-d">-${p.disc}%</span>`:''}
+        ${p.isNew?`<span class="badge-n">NEW</span>`:''}
+      </div>
+      <button class="pc-wish${w?' on':''}" onclick="event.stopPropagation();toggleWish(${p.id},this)" title="Sevimli">
+        <svg width="14" height="14" fill="${w?'currentColor':'none'}" stroke="${w?'var(--red)':'currentColor'}" stroke-width="2" viewBox="0 0 24 24" style="color:${w?'var(--red)':'var(--muted)'}"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </button>
+    </div>
+    <div class="pc-body">
+      <div class="pc-brand">${p.brand}</div>
+      <div class="pc-name">${p.name}</div>
+      <div class="pc-stars">${stars(p.rating)} <span style="margin-left:3px">${p.rating} (${p.rev})</span></div>
+      <div class="pc-price-row">
+        <div class="pc-price">${fmt(p.price)}</div>
+        ${p.old?`<div class="pc-old">${fmt(p.old)}</div>`:''}
+      </div>
+      <button class="pc-cart" onclick="event.stopPropagation();addCart(${p.id})">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        Savatga qo'shish
+      </button>
+    </div>
+  </div>`;
+}
+ 
+// ─── RENDER ─────────────────────────────────────────────────────────────────
+function renderCats(){
+  document.getElementById('catGrid').innerHTML=CATS.map(c=>`
+    <div class="cat-card" onclick="alert('${c.name} kategoriyasi')">
+      <div class="cat-icon">${c.icon}</div>
+      <div class="cat-name">${c.name}</div>
+    </div>`).join('');
+}
+ 
+function renderFlash(){
+  const disc=PRODUCTS.filter(p=>p.disc>0);
+  document.getElementById('flashScroll').innerHTML=disc.map(p=>pcHTML(p,true)).join('');
+}
+ 
+function renderRec(){
+  document.getElementById('recGrid').innerHTML=PRODUCTS.slice(0,10).map(p=>pcHTML(p)).join('');
+}
+ 
+function renderNew(){
+  const np=PRODUCTS.filter(p=>p.isNew);
+  const rest=PRODUCTS.filter(p=>!p.isNew).slice(0,7-np.length);
+  document.getElementById('newGrid').innerHTML=[...np,...rest].map(p=>pcHTML(p)).join('');
+}
+ 
+function renderCart(){
+  const keys=Object.keys(cart).filter(k=>cart[k]>0);
+  const el=document.getElementById('cartBody');
+  if(!keys.length){
+    el.innerHTML=`<div style="text-align:center;padding:40px;color:var(--muted)">
+      <div style="font-size:3rem;margin-bottom:12px">🛒</div>
+      <div style="font-weight:800;font-size:1.1rem;color:var(--text);margin-bottom:6px">Savat bo'sh</div>
+      <div style="font-size:.88rem">Mahsulot qo'shing va buyurtma bering</div>
+    </div>`;return;
+  }
+  let total=0;
+  let rows=keys.map(k=>{
+    const p=PRODUCTS.find(x=>x.id==k);
+    if(!p)return'';
+    const sum=p.price*cart[k];total+=sum;
+    return`<div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)">
+      <img src="${p.img}" style="width:64px;height:64px;object-fit:contain;background:#f9f9f9;border-radius:8px;padding:4px"/>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.82rem;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${p.name}</div>
+        <div style="font-size:.88rem;font-weight:900;color:var(--red);margin-top:4px">${fmt(p.price)}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:0;border:1.5px solid var(--border);border-radius:8px;overflow:hidden">
+        <button onclick="changeQty(${p.id},-1)" style="width:32px;height:32px;background:var(--bg);border:none;cursor:pointer;font-size:1.1rem;font-weight:700;color:var(--text)">−</button>
+        <span style="min-width:32px;text-align:center;font-weight:800;font-size:.95rem">${cart[k]}</span>
+        <button onclick="changeQty(${p.id},1)" style="width:32px;height:32px;background:var(--bg);border:none;cursor:pointer;font-size:1.1rem;font-weight:700;color:var(--text)">+</button>
+      </div>
+      <div style="font-weight:900;color:var(--text);min-width:100px;text-align:right;font-size:.88rem">${fmt(sum)}</div>
+      <button onclick="removeCart(${p.id})" style="color:var(--muted);background:none;border:none;cursor:pointer;padding:4px">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+      </button>
+    </div>`;
+  }).join('');
+  el.innerHTML=rows+`
+    <div style="display:flex;justify-content:flex-end;margin-top:16px">
+      <div style="background:var(--bg);border-radius:var(--r2);padding:20px 24px;min-width:280px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:.9rem">
+          <span style="color:var(--muted)">Yetkazib berish</span>
+          <span style="font-weight:700;color:var(--green)">Bepul</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:16px;font-size:1.05rem">
+          <span style="font-weight:700">Jami:</span>
+          <span style="font-weight:900;color:var(--red)">${fmt(total)}</span>
+        </div>
+        <button onclick="alert('Buyurtma berildi!')" style="width:100%;padding:13px;background:var(--red);color:#fff;border:none;border-radius:var(--r);font-family:Nunito,sans-serif;font-size:.95rem;font-weight:800;cursor:pointer;transition:background .15s" onmouseover="this.style.background='var(--red2)'" onmouseout="this.style.background='var(--red)'">
+          🛒 Buyurtma berish
+        </button>
+      </div>
+    </div>`;
+}
+ 
+function changeQty(id,d){
+  cart[id]=Math.max(0,(cart[id]||0)+d);
+  if(cart[id]===0)delete cart[id];
+  updateBadges();renderCart();
+}
+function removeCart(id){delete cart[id];updateBadges();renderCart();}
+ 
+// ─── BANNER SLIDER ──────────────────────────────────────────────────────────
+let slide=0,total=3,timer;
+function renderDots(){
+  const dc=document.getElementById('bannerDots');
+  dc.innerHTML=[...Array(total)].map((_,i)=>`<div class="bdot${i===slide?' on':''}" onclick="goSlide(${i})"></div>`).join('');
+}
+function goSlide(n){
+  slide=n;
+  document.getElementById('bannerTrack').style.transform=`translateX(-${n*100}%)`;
+  renderDots();
+}
+function slideBanner(d){goSlide((slide+d+total)%total);resetTimer();}
+function resetTimer(){clearInterval(timer);timer=setInterval(()=>goSlide((slide+1)%total),4500);}
+renderDots();resetTimer();
+ 
+// ─── COUNTDOWN ───────────────────────────────────────────────────────────────
+function updateCountdown(){
+  const now=new Date();
+  const end=new Date(now);
+  end.setHours(23,59,59,0);
+  let diff=Math.floor((end-now)/1000);
+  const h=String(Math.floor(diff/3600)).padStart(2,'0');
+  const m=String(Math.floor((diff%3600)/60)).padStart(2,'0');
+  const s=String(diff%60).padStart(2,'0');
+  document.getElementById('countdown').innerHTML=`
+    <span style="color:rgba(255,255,255,.7);font-size:.85rem;font-weight:700">Tugashiga:</span>
+    <div class="countdown"><div class="cd-box">${h}</div><span class="cd-sep">:</span><div class="cd-box">${m}</div><span class="cd-sep">:</span><div class="cd-box">${s}</div></div>`;
+}
+updateCountdown();setInterval(updateCountdown,1000);
+ 
+// ─── MOBILE NAV ─────────────────────────────────────────────────────────────
+function setMobActive(el){
+  document.querySelectorAll('.mnbtn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+}
+ 
+// ─── SCROLL TOP ─────────────────────────────────────────────────────────────
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('show',window.scrollY>300);
+});
+ 
+function scrollToSection(id){
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+ 
+// ─── INIT ────────────────────────────────────────────────────────────────────
+renderCats();renderFlash();renderRec();renderNew();renderCart();updateBadges();
+</script>
+</body>
+</html>
+ 

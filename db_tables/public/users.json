@@ -1,0 +1,134 @@
+[
+  {
+    "id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "phone": "+998901234567",
+    "full_name": "Alisher Umarov",
+    "email": "alisher@gmail.com",
+    "password_hash": "$2b$10$hash1",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "29e1084c-a9c5-449d-a258-9811f7d16bde",
+    "phone": "+998902345678",
+    "full_name": "Malika Karimova",
+    "email": "malika@gmail.com",
+    "password_hash": "$2b$10$hash2",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "82a8950f-c172-41b6-8ae3-285c39e0c822",
+    "phone": "+998903456789",
+    "full_name": "Jasur Toshmatov",
+    "email": "jasur@gmail.com",
+    "password_hash": "$2b$10$hash3",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "965885c7-e419-4b0d-8868-e879ea648734",
+    "phone": "+998904567890",
+    "full_name": "Nodira Yusupova",
+    "email": "nodira@gmail.com",
+    "password_hash": "$2b$10$hash4",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": false,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "1dc06bd1-49cc-4a43-b69e-8c0eae550355",
+    "phone": "+998905678901",
+    "full_name": "Bobur R\u0430\u0445imov",
+    "email": "bobur@gmail.com",
+    "password_hash": "$2b$10$hash5",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "fb8c073a-f71b-4df3-b23c-4b4aea7b3e22",
+    "phone": "+998906789012",
+    "full_name": "Zilola Nazarova",
+    "email": "zilola@gmail.com",
+    "password_hash": "$2b$10$hash6",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "e7b0f225-5049-4961-a0da-0d3124328a5f",
+    "phone": "+998907890123",
+    "full_name": "Sardor Mirzayev",
+    "email": "sardor@gmail.com",
+    "password_hash": "$2b$10$hash7",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "d2a54221-af8c-49a3-8475-cb66aae796c1",
+    "phone": "+998908901234",
+    "full_name": "Dildora Abdullayeva",
+    "email": "dildora@gmail.com",
+    "password_hash": "$2b$10$hash8",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": false,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "4eb366bf-fa2d-46db-a731-9604b55122ea",
+    "phone": "+998909012345",
+    "full_name": "Ulugbek Holmatov",
+    "email": "ulugbek@gmail.com",
+    "password_hash": "$2b$10$hash9",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "2105ac3b-8116-41b6-81ad-42d323d4154b",
+    "phone": "+998901112233",
+    "full_name": "Feruza Saidova",
+    "email": "feruza@gmail.com",
+    "password_hash": "$2b$10$hash10",
+    "role": "customer",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "e995211d-96a7-4d00-95cf-06bcd826993d",
+    "phone": "+998712036660",
+    "full_name": "OpenShop Admin",
+    "email": "admin@openshop.uz",
+    "password_hash": "$2b$10$admin",
+    "role": "admin",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  },
+  {
+    "id": "27c2e825-3d17-4fb8-b94a-376bb9aa4179",
+    "phone": "+998712036661",
+    "full_name": "Moderator User",
+    "email": "moder@openshop.uz",
+    "password_hash": "$2b$10$moder",
+    "role": "moderator",
+    "is_active": true,
+    "is_verified": true,
+    "created_at": "2026-05-29 19:11:44.616909+00:00"
+  }
+]

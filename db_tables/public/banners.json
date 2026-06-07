@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "iPhone 15 Pro Max",
+    "subtitle": "12 999 000 so'mdan. Tez buyurtma bering!",
+    "image_url": "/banners/iphone15.jpg",
+    "link_url": "/smartfonlar/apple-iphone-15-pro-max-256gb",
+    "sort_order": 1,
+    "is_active": true,
+    "starts_at": null,
+    "ends_at": "2026-06-28 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  },
+  {
+    "id": 2,
+    "title": "MacBook Air M2",
+    "subtitle": "16 490 000 so'm. 8% chegirma!",
+    "image_url": "/banners/macbook-m2.jpg",
+    "link_url": "/noutbuklar/macbook-air-m2-13-256gb",
+    "sort_order": 2,
+    "is_active": true,
+    "starts_at": null,
+    "ends_at": "2026-06-28 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  },
+  {
+    "id": 3,
+    "title": "Samsung QLED 55\"",
+    "subtitle": "Eng yaxshi narxda \u2014 8 990 000 so'm",
+    "image_url": "/banners/samsung-tv.jpg",
+    "link_url": "/televizorlar/samsung-qled-55-q80c",
+    "sort_order": 3,
+    "is_active": true,
+    "starts_at": null,
+    "ends_at": "2026-06-12 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  },
+  {
+    "id": 4,
+    "title": "Sony WH-1000XM5",
+    "subtitle": "Chegirma -15%! Faqat bugun!",
+    "image_url": "/banners/sony-wh.jpg",
+    "link_url": "/audio/sony-wh-1000xm5",
+    "sort_order": 4,
+    "is_active": true,
+    "starts_at": null,
+    "ends_at": "2026-06-05 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  },
+  {
+    "id": 5,
+    "title": "Yozgi chegirmalar!",
+    "subtitle": "1000+ mahsulotda 20% gacha chegirma",
+    "image_url": "/banners/sale-summer.jpg",
+    "link_url": "/chegirma",
+    "sort_order": 5,
+    "is_active": true,
+    "starts_at": null,
+    "ends_at": "2026-06-12 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  },
+  {
+    "id": 6,
+    "title": "LG OLED 65\"",
+    "subtitle": "Eng yaxshi televisor \u2014 15 990 000 so'm",
+    "image_url": "/banners/lg-oled.jpg",
+    "link_url": "/televizorlar/lg-oled-65-c3-4k",
+    "sort_order": 6,
+    "is_active": true,
+    "starts_at": null,
+    "ends_at": "2026-06-18 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  },
+  {
+    "id": 7,
+    "title": "Xiaomi 14 Ultra",
+    "subtitle": "Yangi! 9 499 000 so'mdan",
+    "image_url": "/banners/xiaomi14u.jpg",
+    "link_url": "/smartfonlar/xiaomi-14-ultra-512gb",
+    "sort_order": 7,
+    "is_active": true,
+    "starts_at": null,
+    "ends_at": "2026-06-28 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  },
+  {
+    "id": 8,
+    "title": "AirPods Pro 2",
+    "subtitle": "-15% chegirma. 2 299 000 so'm",
+    "image_url": "/banners/airpodspro2.jpg",
+    "link_url": "/audio/airpods-pro-2nd-gen",
+    "sort_order": 8,
+    "is_active": true,
+    "starts_at": null,
+    "ends_at": "2026-06-08 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  },
+  {
+    "id": 9,
+    "title": "Maktabga tayyorgarlik",
+    "subtitle": "Noutbuk va aksessuarlarda maxsus narxlar",
+    "image_url": "/banners/back-school.jpg",
+    "link_url": "/noutbuklar",
+    "sort_order": 9,
+    "is_active": false,
+    "starts_at": null,
+    "ends_at": "2026-05-28 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  },
+  {
+    "id": 10,
+    "title": "Ramazon muborak!",
+    "subtitle": "Barcha mahsulotlarda 10% chegirma",
+    "image_url": "/banners/ramadan.jpg",
+    "link_url": "/chegirma",
+    "sort_order": 10,
+    "is_active": false,
+    "starts_at": null,
+    "ends_at": "2026-04-29 19:14:25.074568+00:00",
+    "created_at": "2026-05-29 19:14:25.074568+00:00"
+  }
+]

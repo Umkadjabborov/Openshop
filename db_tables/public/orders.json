@@ -1,0 +1,22 @@
+[
+  {
+    "id": "19f59c51-d525-48dd-a1eb-2e6f4767eedc",
+    "order_number": "OS-2026-00001",
+    "user_id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "status": "delivered",
+    "delivery_name": "Alisher Umarov",
+    "delivery_phone": "+998901234567",
+    "delivery_region": "Toshkent shahri",
+    "delivery_district": "Yunusobod",
+    "delivery_address": "Amir Temur 1",
+    "payment_method": "click",
+    "payment_status": "paid",
+    "subtotal": "12999000.00",
+    "delivery_fee": "0.00",
+    "discount_amount": "0.00",
+    "total_amount": "12999000.00",
+    "coupon_code": null,
+    "created_at": "2026-05-09 19:20:03.409064+00:00",
+    "updated_at": "2026-05-29 19:20:03.409064+00:00"
+  }
+]

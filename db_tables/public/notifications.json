@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "user_id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "title": "Buyurtmangiz tasdiqlandi \u2705",
+    "body": "OS-2026-00001 raqamli buyurtmangiz tasdiqlandi.",
+    "type": "order",
+    "is_read": true,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  },
+  {
+    "id": 2,
+    "user_id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "title": "Buyurtma yetkazildi \ud83c\udf89",
+    "body": "OS-2026-00001 buyurtmangiz muvaffaqiyatli yetkazildi!",
+    "type": "order",
+    "is_read": true,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  },
+  {
+    "id": 3,
+    "user_id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "title": "Maxsus taklif! \ud83d\udd25",
+    "body": "Bugun barcha Apple mahsulotlarida 5% chegirma. APPLE5 kuponini ishlating.",
+    "type": "promo",
+    "is_read": false,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  },
+  {
+    "id": 4,
+    "user_id": "29e1084c-a9c5-449d-a258-9811f7d16bde",
+    "title": "Buyurtmangiz yetdi \ud83c\udf89",
+    "body": "OS-2026-00002 buyurtmangiz yetkazildi. Rahmat!",
+    "type": "order",
+    "is_read": true,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  },
+  {
+    "id": 5,
+    "user_id": "29e1084c-a9c5-449d-a258-9811f7d16bde",
+    "title": "Flash Sale boshlandi \u26a1",
+    "body": "1000+ mahsulotda chegirmalar. Tez buyurtma bering!",
+    "type": "promo",
+    "is_read": false,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  },
+  {
+    "id": 6,
+    "user_id": "82a8950f-c172-41b6-8ae3-285c39e0c822",
+    "title": "Savatingizda mahsulot bor \ud83d\uded2",
+    "body": "Savatingizdagi mahsulotlarni unutmadingizmi? Buyurtma bering!",
+    "type": "system",
+    "is_read": false,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  },
+  {
+    "id": 7,
+    "user_id": "82a8950f-c172-41b6-8ae3-285c39e0c822",
+    "title": "Buyurtma jo'natildi \ud83d\ude9a",
+    "body": "OS-2026-00004 buyurtmangiz jo'natildi. Yetkazish: 1-3 kun.",
+    "type": "order",
+    "is_read": true,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  },
+  {
+    "id": 8,
+    "user_id": "965885c7-e419-4b0d-8868-e879ea648734",
+    "title": "Yangi mahsulot!",
+    "body": "Siz qiziqarli kategoriyada yangi mahsulotlar qo'shildi.",
+    "type": "system",
+    "is_read": false,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  },
+  {
+    "id": 9,
+    "user_id": "965885c7-e419-4b0d-8868-e879ea648734",
+    "title": "Buyurtmangiz qabul qilindi",
+    "body": "OS-2026-00005 buyurtmangiz qabul qilindi. Tez yetkazamiz!",
+    "type": "order",
+    "is_read": false,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  },
+  {
+    "id": 10,
+    "user_id": "1dc06bd1-49cc-4a43-b69e-8c0eae550355",
+    "title": "Chegirma faqat bugun! \ud83c\udfaf",
+    "body": "Samsung televizorlarida 20% chegirma. Faqat bugun!",
+    "type": "promo",
+    "is_read": false,
+    "created_at": "2026-05-29 19:20:34.832081+00:00"
+  }
+]

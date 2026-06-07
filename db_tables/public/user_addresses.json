@@ -1,0 +1,112 @@
+[
+  {
+    "id": "c61643f6-2f53-4c77-a1c4-312d24775982",
+    "user_id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "title": "Uy",
+    "region": "Toshkent shahri",
+    "district": "Yunusobod",
+    "street": "Amir Temur ko'chasi 1",
+    "apartment": "45",
+    "is_default": true,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  },
+  {
+    "id": "2ef51424-d4bc-428f-8e28-d38f9f67b69e",
+    "user_id": "cc3f998e-2ff1-44f6-9faa-4e02a961546d",
+    "title": "Ish",
+    "region": "Toshkent shahri",
+    "district": "Mirzo Ulug'bek",
+    "street": "Bunyodkor ko'chasi 12",
+    "apartment": null,
+    "is_default": false,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  },
+  {
+    "id": "560aa4c1-fc08-49a8-947a-4c750a1bac72",
+    "user_id": "29e1084c-a9c5-449d-a258-9811f7d16bde",
+    "title": "Uy",
+    "region": "Toshkent shahri",
+    "district": "Chilonzor",
+    "street": "Qoratosh ko'chasi 5",
+    "apartment": "12",
+    "is_default": true,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  },
+  {
+    "id": "cc6ffcea-d6f5-4d22-aa67-ea1ca5af6ae9",
+    "user_id": "82a8950f-c172-41b6-8ae3-285c39e0c822",
+    "title": "Uy",
+    "region": "Samarqand viloyati",
+    "district": "Samarqand",
+    "street": "Registon ko'chasi 7",
+    "apartment": "3",
+    "is_default": true,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  },
+  {
+    "id": "f210eb6d-a541-4857-a1a5-9ab360a35d2e",
+    "user_id": "965885c7-e419-4b0d-8868-e879ea648734",
+    "title": "Uy",
+    "region": "Toshkent shahri",
+    "district": "Shayxontohur",
+    "street": "Navoiy ko'chasi 22",
+    "apartment": "8",
+    "is_default": true,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  },
+  {
+    "id": "042e8a6b-5338-4f4f-a679-7316abd82338",
+    "user_id": "1dc06bd1-49cc-4a43-b69e-8c0eae550355",
+    "title": "Uy",
+    "region": "Farg'ona viloyati",
+    "district": "Farg'ona",
+    "street": "Mustaqillik ko'chasi 14",
+    "apartment": "2",
+    "is_default": true,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  },
+  {
+    "id": "620112b7-bfb2-441e-8ed7-9c951137450e",
+    "user_id": "fb8c073a-f71b-4df3-b23c-4b4aea7b3e22",
+    "title": "Uy",
+    "region": "Toshkent shahri",
+    "district": "Bektemir",
+    "street": "Yangiyo'l ko'chasi 3",
+    "apartment": "17",
+    "is_default": true,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  },
+  {
+    "id": "4798a961-cf9a-44a8-af6a-63bd819092b7",
+    "user_id": "e7b0f225-5049-4961-a0da-0d3124328a5f",
+    "title": "Uy",
+    "region": "Buxoro viloyati",
+    "district": "Buxoro",
+    "street": "Lyabi-Xovuz ko'chasi 1",
+    "apartment": null,
+    "is_default": true,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  },
+  {
+    "id": "8a78d720-3cd2-4b47-867f-4543df41c8ff",
+    "user_id": "d2a54221-af8c-49a3-8475-cb66aae796c1",
+    "title": "Uy",
+    "region": "Namangan viloyati",
+    "district": "Namangan",
+    "street": "Istiqlol ko'chasi 9",
+    "apartment": "21",
+    "is_default": true,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  },
+  {
+    "id": "40e61a48-493e-42ad-b894-eb4a6c641849",
+    "user_id": "4eb366bf-fa2d-46db-a731-9604b55122ea",
+    "title": "Uy",
+    "region": "Toshkent shahri",
+    "district": "Uchtepa",
+    "street": "Sebzor ko'chasi 6",
+    "apartment": "11",
+    "is_default": true,
+    "created_at": "2026-05-29 19:13:58.167574+00:00"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "cart_id": "807b93a7-f8ce-4b80-bb2b-65ddf8bc0fe7",
+    "product_id": "88e72822-5338-41ac-a16f-f9df70b33d96",
+    "quantity": 1,
+    "price": "12999000.00",
+    "created_at": "2026-05-29 19:14:52.585665+00:00"
+  },
+  {
+    "id": 2,
+    "cart_id": "807b93a7-f8ce-4b80-bb2b-65ddf8bc0fe7",
+    "product_id": "226fb289-97b9-44a5-b309-490da0da0ee6",
+    "quantity": 2,
+    "price": "2299000.00",
+    "created_at": "2026-05-29 19:14:52.585665+00:00"
+  },
+  {
+    "id": 3,
+    "cart_id": "76a42cdf-80d1-4f29-9ec0-faa093bf0148",
+    "product_id": "fe2573a1-e033-4991-97d7-7da59c04040d",
+    "quantity": 1,
+    "price": "16490000.00",
+    "created_at": "2026-05-29 19:14:52.585665+00:00"
+  },
+  {
+    "id": 4,
+    "cart_id": "cc888359-8239-4467-81ee-89974add210a",
+    "product_id": "958aa194-eee3-41c8-91f2-9cd5452fe86a",
+    "quantity": 1,
+    "price": "11499000.00",
+    "created_at": "2026-05-29 19:14:52.585665+00:00"
+  },
+  {
+    "id": 5,
+    "cart_id": "cc888359-8239-4467-81ee-89974add210a",
+    "product_id": "63ddfe64-ac46-48c6-8f5e-63cfd4acc7b3",
+    "quantity": 1,
+    "price": "2990000.00",
+    "created_at": "2026-05-29 19:14:52.585665+00:00"
+  }
+]

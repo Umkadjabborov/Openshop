@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "slug": "apple",
+    "logo_url": "/brands/apple.svg",
+    "is_active": true
+  },
+  {
+    "id": 2,
+    "name": "Samsung",
+    "slug": "samsung",
+    "logo_url": "/brands/samsung.svg",
+    "is_active": true
+  },
+  {
+    "id": 3,
+    "name": "Xiaomi",
+    "slug": "xiaomi",
+    "logo_url": "/brands/xiaomi.svg",
+    "is_active": true
+  },
+  {
+    "id": 4,
+    "name": "Sony",
+    "slug": "sony",
+    "logo_url": "/brands/sony.svg",
+    "is_active": true
+  },
+  {
+    "id": 5,
+    "name": "LG",
+    "slug": "lg",
+    "logo_url": "/brands/lg.svg",
+    "is_active": true
+  },
+  {
+    "id": 6,
+    "name": "Dell",
+    "slug": "dell",
+    "logo_url": "/brands/dell.svg",
+    "is_active": true
+  },
+  {
+    "id": 7,
+    "name": "Lenovo",
+    "slug": "lenovo",
+    "logo_url": "/brands/lenovo.svg",
+    "is_active": true
+  },
+  {
+    "id": 8,
+    "name": "Canon",
+    "slug": "canon",
+    "logo_url": "/brands/canon.svg",
+    "is_active": true
+  },
+  {
+    "id": 9,
+    "name": "Huawei",
+    "slug": "huawei",
+    "logo_url": "/brands/huawei.svg",
+    "is_active": true
+  },
+  {
+    "id": 10,
+    "name": "ASUS",
+    "slug": "asus",
+    "logo_url": "/brands/asus.svg",
+    "is_active": true
+  },
+  {
+    "id": 11,
+    "name": "HP",
+    "slug": "hp",
+    "logo_url": "/brands/hp.svg",
+    "is_active": true
+  },
+  {
+    "id": 12,
+    "name": "Microsoft",
+    "slug": "microsoft",
+    "logo_url": "/brands/microsoft.svg",
+    "is_active": true
+  }
+]
