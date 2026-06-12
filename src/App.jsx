@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useState, useRef } from 'react';
+﻿﻿import { useEffect, useMemo, useState, useRef } from 'react';
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
 import EmojiPicker from 'emoji-picker-react';
 import './App.css';
@@ -353,6 +353,11 @@ function AdminSidebar({ auth }) {
       icon: <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>,
     },
     {
+      to: '/dashboard/users',
+      label: 'Mijozlar',
+      icon: <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>,
+    },
+    {
       to: '/dashboard/categories',
       label: 'Kategoriyalar',
       icon: <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>,
@@ -504,6 +509,77 @@ function AdminProductsPage({ products, brands, categories, onAddProduct, onDelet
         </div>
       </main>
       {modalOpen && <AddProductModal open={modalOpen} onClose={() => setModalOpen(false)} brands={brands} categories={categories} onAddProduct={onAddProduct} />}
+    </div>
+  );
+}
+
+function AdminUsersPage({ users, auth }) {
+  const [search, setSearch] = useState('');
+  const filtered = users.filter(u => 
+    !search || 
+    u.name.toLowerCase().includes(search.toLowerCase()) || 
+    u.email.toLowerCase().includes(search.toLowerCase())
+    u.email.toLowerCase().includes(search.toLowerCase()) ||
+    (u.phone && u.phone.includes(search))
+  );
+
+  return (
+    <div className="db-layout">
+      <AdminSidebar auth={auth} />
+      <main className="db-main">
+        <header className="db-topbar">
+          <div className="db-topbar-title">Mijozlar ro'yxati</div>
+          <div className="db-topbar-actions">
+            <div className="db-stat-chip"><span>Jami:</span><strong>{users.length} ta</strong></div>
+          </div>
+        </header>
+        <div className="db-content">
+          <div className="db-toolbar">
+            <div className="db-search-box">
+              <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" placeholder="Ism yoki email bo'yicha qidirish..." value={search} onChange={e => setSearch(e.target.value)} />
+              <input type="text" placeholder="Ism, email yoki telefon bo'yicha qidirish..." value={search} onChange={e => setSearch(e.target.value)} />
+            </div>
+          </div>
+          <div className="db-table-wrap">
+            <div className="db-table-head" style={{display:'grid', gridTemplateColumns:'44px 1fr 1fr 100px 160px', gap:8, padding:'0 14px'}}>
+            <div className="db-table-head" style={{display:'grid', gridTemplateColumns:'44px 1.2fr 1fr 1fr 80px 100px 120px', gap:8, padding:'0 14px'}}>
+              <div className="db-th">#</div>
+              <div className="db-th">F.I.SH</div>
+              <div className="db-th">Email</div>
+              <div className="db-th">Telefon</div>
+              <div className="db-th">Rol</div>
+              <div className="db-th">Holat</div>
+              <div className="db-th">Ro'yxatdan o'tgan</div>
+            </div>
+            {filtered.length === 0 ? (
+              <div className="db-empty">Mijozlar topilmadi</div>
+            ) : filtered.map((user, i) => (
+              <div key={user.id} className="db-table-row" style={{display:'grid', gridTemplateColumns:'44px 1fr 1fr 100px 160px', gap:8, padding:'0 14px'}}>
+              <div key={user.id} className="db-table-row" style={{display:'grid', gridTemplateColumns:'44px 1.2fr 1fr 1fr 80px 100px 120px', gap:8, padding:'0 14px'}}>
+                <div className="db-td">{i + 1}</div>
+                <div className="db-td"><strong>{user.name}</strong></div>
+                <div className="db-td">{user.email}</div>
+                <div className="db-td" style={{fontSize:'.85rem'}}>{user.phone || '—'}</div>
+                <div className="db-td">
+                  <span className={`db-badge ${user.role === 'admin' ? 'db-badge-red' : 'db-badge-green'}`}>
+                    {user.role}
+                  </span>
+                </div>
+                <div className="db-td">
+                  <div className={`db-status ${user.is_active ? 'db-status-active' : 'db-status-out'}`} style={{fontSize:'.75rem'}}>
+                    <span className="db-status-dot" />
+                    {user.is_active ? 'Faol' : 'Nofaol'}
+                  </div>
+                </div>
+                <div className="db-td" style={{fontSize:'.8rem', color:'var(--muted)'}}>
+                  {user.created_at ? new Date(user.created_at).toLocaleDateString() : '—'}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
@@ -759,7 +835,7 @@ function AdminBrandsPage({ brands, onAddBrand, auth }) {
   );
 }
 
-function DashboardPage({ products, brands, categories, auth }) {
+function DashboardPage({ products, brands, categories, users, auth }) {
   const navigate = useNavigate();
   const totalValue = products.reduce((sum, p) => sum + Number(p.price || 0), 0);
 
@@ -767,6 +843,7 @@ function DashboardPage({ products, brands, categories, auth }) {
     { label: 'Jami mahsulotlar', value: products.length, icon: '📦', to: '/dashboard/products', color: '#FDECEA', tc: '#E63329' },
     { label: 'Kategoriyalar', value: categories.length, icon: '🏷️', to: '/dashboard/categories', color: '#EBF2FF', tc: '#2563EB' },
     { label: 'Brendlar', value: brands.length, icon: '⭐', to: '/dashboard/brands', color: '#DCFCE7', tc: '#16A34A' },
+    { label: 'Mijozlar', value: users.length, icon: '👤', to: '/dashboard/users', color: '#F3E8FF', tc: '#9333EA' },
     { label: 'Umumiy qiymat', value: Math.round(totalValue / 1000000) + ' mln', icon: '💰', to: '/dashboard/products', color: '#FEF9C3', tc: '#CA8A04' },
   ];
 
@@ -1324,6 +1401,7 @@ function App() {
   const [categories, setCategories] = useState([]);
   const [brands, setBrands] = useState([]);
   const [products, setProducts] = useState([]);
+  const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [catalogOpen, setCatalogOpen] = useState(false);
@@ -1342,10 +1420,11 @@ function App() {
 
   useEffect(() => {
     async function load() {
-      const [catsRes, brandsRes, productsRes] = await Promise.all([
+      const [catsRes, brandsRes, productsRes, usersRes] = await Promise.all([
         fetch(`${API_BASE}/api/categories`),
         fetch(`${API_BASE}/api/brands`),
         fetch(`${API_BASE}/api/products`),
+        fetch(`${API_BASE}/api/users`).catch(() => null),
       ]);
       if (catsRes.ok) setCategories(await catsRes.json());
       if (brandsRes.ok) setBrands(await brandsRes.json());
@@ -1353,6 +1432,7 @@ function App() {
         const productsJson = await productsRes.json();
         setProducts(productsJson);
       }
+      if (usersRes && usersRes.ok) setUsers(await usersRes.json());
     }
     load();
   }, []);
@@ -1588,12 +1668,17 @@ function App() {
         <Route path="/cart" element={<CartPage products={products} cart={cart} onChangeQty={handleChangeQty} onRemove={handleRemove} onAddCart={handleAddCart} />} />
         <Route path="/dashboard" element={
           auth.role === 'admin'
-            ? <DashboardPage products={products} brands={brands} categories={categories} auth={auth} />
+            ? <DashboardPage products={products} brands={brands} categories={categories} users={users} auth={auth} />
             : <Navigate to="/login" replace />
         } />
         <Route path="/dashboard/products" element={
           auth.role === 'admin'
             ? <AdminProductsPage products={products} brands={brands} categories={categories} onAddProduct={handleAddProduct} onDeleteProduct={handleDeleteProduct} auth={auth} />
+            : <Navigate to="/login" replace />
+        } />
+        <Route path="/dashboard/users" element={
+          auth.role === 'admin'
+            ? <AdminUsersPage users={users} auth={auth} />
             : <Navigate to="/login" replace />
         } />
         <Route path="/dashboard/categories" element={

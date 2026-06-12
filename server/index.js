@@ -303,6 +303,19 @@ app.post('/api/auth/login', async (req, res) => {
   }
 });
 
+// Barcha foydalanuvchilarni (mijozlarni) olish
+app.get('/api/users', async (req, res) => {
+  try {
+    const result = await pool.query(
+      'SELECT id, full_name AS name, email, role, created_at FROM public.users ORDER BY created_at DESC'
+    );
+    res.json(result.rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to load users' });
+  }
+});
+
 // POST category
 app.post('/api/categories', async (req, res) => {
   try {
