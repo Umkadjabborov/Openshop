@@ -298,7 +298,7 @@ function AddProductModal({ open, onClose, brands, categories, onAddProduct }) {
       <div className="dialog-card add-product-modal" onClick={e => e.stopPropagation()}>
         <div className="dialog-header">
           <h2>Yangi mahsulot qo'shish</h2>
-          <button type="button" className="close-btn" onClick={onClose}>\u2715</button>
+          <button type="button" className="close-btn" onClick={onClose}>✕</button>
         </div>
         <div className="dialog-body">
           <form className="dashboard-form" onSubmit={handleSubmit}>
@@ -518,7 +518,6 @@ function AdminUsersPage({ users, auth }) {
   const filtered = users.filter(u => 
     !search || 
     u.name.toLowerCase().includes(search.toLowerCase()) || 
-    u.email.toLowerCase().includes(search.toLowerCase())
     u.email.toLowerCase().includes(search.toLowerCase()) ||
     (u.phone && u.phone.includes(search))
   );
@@ -537,12 +536,10 @@ function AdminUsersPage({ users, auth }) {
           <div className="db-toolbar">
             <div className="db-search-box">
               <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              <input type="text" placeholder="Ism yoki email bo'yicha qidirish..." value={search} onChange={e => setSearch(e.target.value)} />
               <input type="text" placeholder="Ism, email yoki telefon bo'yicha qidirish..." value={search} onChange={e => setSearch(e.target.value)} />
             </div>
           </div>
           <div className="db-table-wrap">
-            <div className="db-table-head" style={{display:'grid', gridTemplateColumns:'44px 1fr 1fr 100px 160px', gap:8, padding:'0 14px'}}>
             <div className="db-table-head" style={{display:'grid', gridTemplateColumns:'44px 1.2fr 1fr 1fr 80px 100px 120px', gap:8, padding:'0 14px'}}>
               <div className="db-th">#</div>
               <div className="db-th">F.I.SH</div>
@@ -555,7 +552,6 @@ function AdminUsersPage({ users, auth }) {
             {filtered.length === 0 ? (
               <div className="db-empty">Mijozlar topilmadi</div>
             ) : filtered.map((user, i) => (
-              <div key={user.id} className="db-table-row" style={{display:'grid', gridTemplateColumns:'44px 1fr 1fr 100px 160px', gap:8, padding:'0 14px'}}>
               <div key={user.id} className="db-table-row" style={{display:'grid', gridTemplateColumns:'44px 1.2fr 1fr 1fr 80px 100px 120px', gap:8, padding:'0 14px'}}>
                 <div className="db-td">{i + 1}</div>
                 <div className="db-td"><strong>{user.name}</strong></div>
@@ -657,7 +653,7 @@ function AdminCategoriesPage({ categories, onAddCategory, auth }) {
               <div className="dialog-card add-product-modal" onClick={e => e.stopPropagation()}>
                 <div className="dialog-header">
                   <h2>Yangi kategoriya</h2>
-                  <button type="button" className="close-btn" onClick={handleClose}>\u2715</button>
+                  <button type="button" className="close-btn" onClick={handleClose}>✕</button>
                 </div>
                 <div className="dialog-body">
                   <form className="dashboard-form" onSubmit={handleSubmit}>
@@ -786,7 +782,7 @@ function AdminBrandsPage({ brands, onAddBrand, auth }) {
               <div className="dialog-card add-product-modal" onClick={e => e.stopPropagation()}>
                 <div className="dialog-header">
                   <h2>Yangi brend</h2>
-                  <button type="button" className="close-btn" onClick={() => setModalOpen(false)}>\u2715</button>
+                  <button type="button" className="close-btn" onClick={() => setModalOpen(false)}>✕</button>
                 </div>
                 <div className="dialog-body">
                   <form className="dashboard-form" onSubmit={handleSubmit}>
